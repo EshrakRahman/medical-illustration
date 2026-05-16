@@ -10,7 +10,7 @@ export default function TopNavBar() {
     const pathname = usePathname();
 
     return (
-        <header className="w-full top-0 bg-background relative z-50 border-b border-border">
+        <header className="w-full top-0 bg-background relative  z-50 border-b border-border">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-6 py-6 md:px-12 md:py-8 bg-transparent">
 
         {/* Brand Logo */}
