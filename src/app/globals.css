@@ -8,8 +8,9 @@
     --color-background: var(--background);
     --color-foreground: var(--foreground);
 
-    --font-sans: var(--font-sans);
-    --font-heading: var(--font-heading);
+    /* Added generic fallbacks here */
+    --font-sans: var(--font-sans, sans-serif);
+    --font-heading: var(--font-heading, serif);
 
     --color-card: var(--card);
     --color-card-foreground: var(--card-foreground);
@@ -39,8 +40,8 @@
        MUSEUM CLINICAL PALETTE
        ========================= */
 
-    --background: #F6F3EE;      /* warm ivory paper */
-    --foreground: #1E1E1E;      /* charcoal text */
+    --background: #F6F3EE;
+    --foreground: #1E1E1E;
 
     --card: #FAFAF7;
     --card-foreground: #1E1E1E;
@@ -51,22 +52,22 @@
     --primary: #1E1E1E;
     --primary-foreground: #FFFFFF;
 
-    --secondary: #6F7C5F;       /* muted olive accent */
+    --secondary: #6F7C5F;
     --secondary-foreground: #FFFFFF;
 
-    --muted: #E7E1D8;           /* soft beige structure */
+    --muted: #E7E1D8;
     --muted-foreground: #6E6A63;
 
-    --accent: #6F7C5F;
+    --accent: #566247;
     --accent-foreground: #FFFFFF;
 
     --border: #E7E1D8;
 
-    --radius: 0px; /* IMPORTANT: museum system = sharp edges */
+    --radius: 0px;
 
-    /* fonts (Next.js will inject these) */
-    --font-sans: var(--font-inter);
-    --font-heading: var(--font-playfair);
+    /* FIX: Added fallback values inside the var() function to satisfy the linter */
+    --font-sans: var(--font-inter, sans-serif);
+    --font-heading: var(--font-playfair, serif);
 }
 
 .dark {
@@ -101,14 +102,17 @@
 
     body {
         @apply bg-background text-foreground;
-        font-family: var(--font-sans);
+        /* FIX: Appended generic defaults */
+        font-family: var(--font-sans), sans-serif;
     }
 
     html {
-        font-family: var(--font-sans);
+        /* FIX: Appended generic defaults */
+        font-family: var(--font-sans), sans-serif;
     }
 
     h1, h2, h3 {
-        font-family: var(--font-heading);
+        /* FIX: Appended generic defaults */
+        font-family: var(--font-heading), serif;
     }
 }
