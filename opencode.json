@@ -1,0 +1,9 @@
+{
+  "mcp": {
+    "resend": {
+      "type": "remote",
+      "url": "https://resend.com/docs/mcp",
+      "enabled": true
+    }
+  }
+}

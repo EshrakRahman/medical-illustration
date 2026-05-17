@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
 import { inter, playfair } from "@/lib/fonts";
 import "./globals.css";
-import { AnimatePresence } from "motion/react";
-import TopNavBar from "@/components/navbar";
-import Footer from "@/components/ui/footer";
-
-
-
 
 export const metadata: Metadata = {
     title: "Medical Illustration Portfolio",
@@ -14,24 +8,18 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
-    >
-      <body className="min-h-screen flex flex-col bg-background text-foreground antialiased">
-      <TopNavBar/>
-      <main className="flex-1 w-full max-w-7xl mx-auto px-6 py-8 md:px-12 md:py-16 lg:px-16 lg:py-24 overflow-x-hidden">
-                <AnimatePresence mode="wait">
-                    {children}
-                </AnimatePresence>
-      </main>
-    <Footer/>
-      </body>
-    </html>
-  );
+    return (
+        <html
+            lang="en"
+            className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+        >
+            <body className="min-h-screen flex flex-col bg-background text-foreground antialiased">
+                {children}
+            </body>
+        </html>
+    );
 }
