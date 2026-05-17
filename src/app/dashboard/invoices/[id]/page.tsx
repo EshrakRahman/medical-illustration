@@ -42,8 +42,8 @@ export default async function InvoiceDetailPage({
             </Link>
 
             <div className="bg-card border border-border max-w-2xl">
-                <div className="p-8">
-                    <div className="flex justify-between items-start">
+                <div className="p-4 md:p-8">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
                         <div>
                             <h1 className="text-xl font-heading text-foreground">
                                 {practice.name}
@@ -62,7 +62,7 @@ export default async function InvoiceDetailPage({
                                 </span>
                             </div>
                         </div>
-                        <div className="text-right">
+                        <div className="sm:text-right">
                             <h2 className="text-lg font-heading text-foreground">
                                 {invoiceNumber}
                             </h2>
@@ -76,7 +76,7 @@ export default async function InvoiceDetailPage({
                         </div>
                     </div>
 
-                    <div className="mt-8 grid grid-cols-2 gap-8">
+                    <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                         <div>
                             <span className="text-xs uppercase tracking-wider text-muted-foreground">
                                 Bill To
@@ -98,7 +98,7 @@ export default async function InvoiceDetailPage({
                                 </span>
                             </div>
                         </div>
-                        <div className="text-right">
+                        <div className="sm:text-right">
                             <div className="text-sm">
                                 <span className="text-xs uppercase tracking-wider text-muted-foreground">
                                     Date
@@ -157,7 +157,7 @@ export default async function InvoiceDetailPage({
                     </div>
                 </div>
 
-                <div className="border-t border-border px-8 py-4 flex items-center justify-between">
+                <div className="border-t border-border px-4 md:px-8 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                     <p className="text-xs text-muted-foreground">
                         {practice.name} — {practice.tagline}
                     </p>
@@ -167,13 +167,13 @@ export default async function InvoiceDetailPage({
                     )}
 
                     {invoice.status === "sent" && (
-                        <div className="flex items-center gap-3">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
                             {invoice.stripePaymentLinkUrl && (
                                 <a
                                     href={invoice.stripePaymentLinkUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="px-4 py-2 bg-foreground text-background text-sm hover:opacity-90 transition-opacity"
+                                    className="px-4 py-2 bg-foreground text-background text-sm hover:opacity-90 transition-opacity text-center"
                                 >
                                     View Payment Link
                                 </a>

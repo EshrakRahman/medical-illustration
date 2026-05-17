@@ -31,8 +31,8 @@ export default async function InquiriesPage() {
                     </p>
                 </div>
             ) : (
-                <div className="bg-background border border-border overflow-hidden">
-                    <table className="w-full text-sm">
+                <div className="bg-background border border-border overflow-x-auto">
+                    <table className="w-full text-sm min-w-[600px]">
                         <thead>
                             <tr className="border-b border-border">
                                 <th className="text-left px-5 py-3 font-medium text-muted-foreground text-xs uppercase tracking-wider">
